@@ -285,7 +285,10 @@
                     <form action="https://formspree.io/f/xzddzbry" method="POST">
                         <!-- Replace 'YOUR_FORM_ID' with your actual Formspree Form ID -->
                         <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required inputmode="tel"
+                            pattern="[6-9]\d{9}" maxlength="10" autocomplete="tel"
+                            title="Enter a 10-digit mobile number">
+                        <input type="email" name="email" placeholder="Email Address" required autocomplete="email">
                         <select name="interest" required>
                             <option value="">Interested In</option>
                             <option value="NA Plot">NA Plot</option>

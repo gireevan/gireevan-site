@@ -94,7 +94,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Form Submissions
-    // Removed JS hijack to allow Formspree standard submission
-    // const forms = document.querySelectorAll('form'); ...
+    // Form Submissions & Validation
+    const forms = document.querySelectorAll('form');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            const errors = [];
+            let firstErrorInput = null;
+
+            // Validate Phone
+            const phoneInput = form.querySelector('input[name="phone"]');
+            if (phoneInput) {
+                const phoneVal = phoneInput.value.replace(/\D/g, '');
+                const phoneRequired = phoneInput.required || phoneVal.length > 0;
+
+                if (phoneRequired && phoneVal.length === 0) {
+                    errors.push('Please enter your mobile number.');
+                    firstErrorInput = firstErrorInput || phoneInput;
+                } else if (phoneVal.length > 0 && !/^[6-9]\d{9}$/.test(phoneVal)) {
+                    errors.push('Please enter a valid 10-digit mobile number starting with 6-9.');
+                    firstErrorInput = firstErrorInput || phoneInput;
+                } else {
+                    // Normalize value so backend receives digits only
+                    phoneInput.value = phoneVal;
+                }
+            }
+
+            // Validate Email (if present)
+            const emailInput = form.querySelector('input[name="email"]');
+            if (emailInput) {
+                const emailVal = emailInput.value.trim();
+                const emailRequired = emailInput.required || emailVal.length > 0;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (emailRequired && !emailRegex.test(emailVal)) {
+                    errors.push('Please enter a valid email address.');
+                    firstErrorInput = firstErrorInput || emailInput;
+                } else {
+                    emailInput.value = emailVal;
+                }
+            }
+
+            if (errors.length > 0) {
+                e.preventDefault();
+                alert(errors.join('\n'));
+                if (firstErrorInput) firstErrorInput.focus();
+            }
+        });
+    });
 });
