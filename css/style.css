@@ -581,6 +581,24 @@ textarea:focus {
     font-size: 1.8rem;
   }
 
+  .hero-section {
+    height: 70vh;
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    padding: 0 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
   .gallery-grid-masonry {
     column-count: 1;
   }
