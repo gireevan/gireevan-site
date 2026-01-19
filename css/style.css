@@ -488,7 +488,7 @@ header.scrolled .logo img {
 }
 
 .form-field::placeholder {
-  color: #777;
+  color: #555;
 }
 
 select.form-field {
@@ -500,7 +500,7 @@ select.form-field {
 }
 
 select.form-field:required:invalid {
-  color: #777;
+  color: #555;
 }
 
 select.form-field option[value=""][disabled] {
