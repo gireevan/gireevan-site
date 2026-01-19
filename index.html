@@ -293,7 +293,7 @@
                     <iframe
                         src="https://www.google.com/maps?q=Revoli+Pen+Raigad&output=embed"
                         width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen=""
-                        loading="lazy"></iframe>
+                        loading="lazy" title="Map showing Revoli Pen Raigad location"></iframe>
                 </div>
                 <div style="flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
                     <h3>Located in Revoli-Pen</h3>
@@ -330,21 +330,21 @@
                     <form action="https://formspree.io/f/xzddzbry" method="POST">
                         <!-- Replace 'YOUR_FORM_ID' with your actual Formspree Form ID -->
                         <label for="lead-name" class="sr-only">Full Name</label>
-                        <input id="lead-name" type="text" name="name" placeholder="Your Name" required>
+                        <input id="lead-name" class="form-field" type="text" name="name" placeholder="Your Name" required>
                         <label for="lead-phone" class="sr-only">Phone Number</label>
-                        <input id="lead-phone" type="tel" name="phone" placeholder="Phone Number" required inputmode="tel"
+                        <input id="lead-phone" class="form-field" type="tel" name="phone" placeholder="Phone Number" required inputmode="tel"
                             pattern="[6-9]\d{9}" maxlength="10" autocomplete="tel"
                             title="Enter a 10-digit mobile number">
                         <label for="lead-email" class="sr-only">Email Address</label>
-                        <input id="lead-email" type="email" name="email" placeholder="Email Address" required autocomplete="email">
+                        <input id="lead-email" class="form-field" type="email" name="email" placeholder="Email Address" required autocomplete="email">
                         <label for="lead-interest" class="sr-only">Interested In</label>
-                        <select id="lead-interest" name="interest" required>
-                            <option value="">Interested In</option>
+                        <select id="lead-interest" class="form-field" name="interest" required>
+                            <option value="" disabled selected>Interested In</option>
                             <option value="NA Plot">NA Plot</option>
                             <option value="Bungalow">Bungalow</option>
                         </select>
                         <label for="lead-message" class="sr-only">Message</label>
-                        <textarea id="lead-message" name="message" rows="3" placeholder="Message"></textarea>
+                        <textarea id="lead-message" class="form-field" name="message" rows="3" placeholder="Message"></textarea>
                         <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Inquiry</button>
                     </form>
                 </div>

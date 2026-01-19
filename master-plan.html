@@ -149,18 +149,18 @@
 
                         <form action="https://formspree.io/f/xzddzbry" method="POST">
                             <label for="mp-name" class="sr-only">Your Name</label>
-                            <input id="mp-name" type="text" name="name" placeholder="Your Name" required>
+                            <input id="mp-name" class="form-field" type="text" name="name" placeholder="Your Name" required>
                             <label for="mp-phone" class="sr-only">Phone Number</label>
-                            <input id="mp-phone" type="tel" name="phone" placeholder="Phone Number" required>
+                            <input id="mp-phone" class="form-field" type="tel" name="phone" placeholder="Phone Number" required>
                             <label for="mp-interest" class="sr-only">I am interested in</label>
-                            <select id="mp-interest" name="interest">
+                            <select id="mp-interest" class="form-field" name="interest" required>
                                 <option value="" disabled selected>I am interested in...</option>
                                 <option value="NA Plot">NA Plot</option>
                                 <option value="Bungalow">Bungalow</option>
                                 <option value="Investment">Investment</option>
                             </select>
                             <label for="mp-message" class="sr-only">Message</label>
-                            <textarea id="mp-message" name="message" rows="3" placeholder="Any specific requirements?"></textarea>
+                            <textarea id="mp-message" class="form-field" name="message" rows="3" placeholder="Any specific requirements?"></textarea>
                             <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
                                 Notify Me <i class="fas fa-bell"></i>
                             </button>

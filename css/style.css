@@ -465,36 +465,93 @@ header.scrolled .logo img {
 }
 
 /* Forms */
-input,
-select,
-textarea {
+.form-field {
   width: 100%;
-  padding: 15px;
+  max-width: 560px;
+  padding: 15px 16px;
+  margin: 0 auto 20px auto;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  border-radius: 6px;
   font-family: var(--font-body);
   font-size: 1rem;
+  line-height: 1.4;
+  box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: var(--white);
+  color: var(--text-color);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+.form-field:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.1);
 }
 
+.form-field::placeholder {
+  color: #777;
+}
+
+select.form-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 56px;
+  padding-right: 40px;
+}
+
+select.form-field:required:invalid {
+  color: #777;
+}
+
+select.form-field option[value=""][disabled] {
+  display: none;
+}
+
+select.form-field option {
+  color: var(--text-color);
+}
+
 .form-card {
-  max-width: 560px;
+  max-width: 620px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  flex: 0 1 620px;
+  align-self: center;
 }
 
 .form-card form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  width: 90%;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-card select {
+  text-align: left;
+  text-align-last: left;
+  display: block;
+  min-height: 56px;
+  padding: 15px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-card .btn {
+  width: 90%;
+  max-width: 560px;
+  align-self: center;
 }
 
 /* Lightbox */
