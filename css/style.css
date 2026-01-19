@@ -586,6 +586,12 @@ textarea:focus {
   justify-content: space-around;
 }
 
+.mobile-bottom-bar a {
+  padding: 10px 12px;
+  min-width: 96px;
+  min-height: 48px;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .gallery-grid-masonry {
