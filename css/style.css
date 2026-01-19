@@ -649,6 +649,50 @@ select.form-field option {
   min-height: 48px;
 }
 
+.social-row {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.social-row a {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-row a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.social-row a.facebook-link {
+  background: #1877f2;
+}
+
+.social-row a.instagram-link {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 75%, #515bd4 100%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .gallery-grid-masonry {
