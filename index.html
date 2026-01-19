@@ -329,17 +329,22 @@
                     <h3 class="mb-20" style="color: var(--primary-color);">Send Inquiry</h3>
                     <form action="https://formspree.io/f/xzddzbry" method="POST">
                         <!-- Replace 'YOUR_FORM_ID' with your actual Formspree Form ID -->
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required inputmode="tel"
+                        <label for="lead-name" class="sr-only">Full Name</label>
+                        <input id="lead-name" type="text" name="name" placeholder="Your Name" required>
+                        <label for="lead-phone" class="sr-only">Phone Number</label>
+                        <input id="lead-phone" type="tel" name="phone" placeholder="Phone Number" required inputmode="tel"
                             pattern="[6-9]\d{9}" maxlength="10" autocomplete="tel"
                             title="Enter a 10-digit mobile number">
-                        <input type="email" name="email" placeholder="Email Address" required autocomplete="email">
-                        <select name="interest" required>
+                        <label for="lead-email" class="sr-only">Email Address</label>
+                        <input id="lead-email" type="email" name="email" placeholder="Email Address" required autocomplete="email">
+                        <label for="lead-interest" class="sr-only">Interested In</label>
+                        <select id="lead-interest" name="interest" required>
                             <option value="">Interested In</option>
                             <option value="NA Plot">NA Plot</option>
                             <option value="Bungalow">Bungalow</option>
                         </select>
-                        <textarea name="message" rows="3" placeholder="Message"></textarea>
+                        <label for="lead-message" class="sr-only">Message</label>
+                        <textarea id="lead-message" name="message" rows="3" placeholder="Message"></textarea>
                         <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Inquiry</button>
                     </form>
                 </div>
@@ -396,7 +401,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919619302873" class="sticky-whatsapp" target="_blank">
+    <a href="https://wa.me/919619302873" class="sticky-whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
