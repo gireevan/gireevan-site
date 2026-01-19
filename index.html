@@ -169,8 +169,13 @@
                 <!-- Plots -->
                 <div class="offering-card">
                     <div style="position: relative;">
-                        <img src="images/NA-plot.jpg" loading="lazy" alt="NA Plots in Pen - Countryside View"
-                            style="width: 100%; height: 250px; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/NA-plot.webp" type="image/webp">
+                            <source srcset="images/NA-plot-optimized.jpg" type="image/jpeg">
+                            <img src="images/NA-plot-optimized.jpg" loading="lazy" width="1600" height="900"
+                                alt="NA Plots in Pen - Countryside View"
+                                style="width: 100%; height: 250px; object-fit: cover;">
+                        </picture>
                     </div>
                     <div style="padding: 30px;">
                         <h3>Premium NA Plots</h3>
@@ -195,8 +200,13 @@
                 <!-- Bungalows -->
                 <div class="offering-card">
                     <div style="position: relative;">
-                        <img src="images/premium-bunglows.jpg" loading="lazy" alt="Luxury Bungalow - Tropical Villa"
-                            style="width: 100%; height: 250px; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/premium-bunglows.webp" type="image/webp">
+                            <source srcset="images/premium-bunglows-optimized.jpg" type="image/jpeg">
+                            <img src="images/premium-bunglows-optimized.jpg" loading="lazy" width="1600" height="896"
+                                alt="Luxury Bungalow - Tropical Villa"
+                                style="width: 100%; height: 250px; object-fit: cover;">
+                        </picture>
                     </div>
                     <div style="padding: 30px;">
                         <h3>Luxury Bungalows</h3>
@@ -312,7 +322,9 @@
                     <p>Call us directly for immediate assistance.</p>
                 </div>
                 <div
+                    class="form-card"
                     style="flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: var(--radius); color: var(--text-color);">
+                    <h3 class="mb-20" style="color: var(--primary-color);">Send Inquiry</h3>
                     <form action="https://formspree.io/f/xzddzbry" method="POST">
                         <!-- Replace 'YOUR_FORM_ID' with your actual Formspree Form ID -->
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -326,7 +338,7 @@
                             <option value="Bungalow">Bungalow</option>
                         </select>
                         <textarea name="message" rows="3" placeholder="Message"></textarea>
-                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Enquire Now</button>
+                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
