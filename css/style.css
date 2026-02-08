@@ -697,6 +697,74 @@ select.form-field option {
   border: 0;
 }
 
+.price-lede {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-color);
+  margin-bottom: 18px;
+}
+
+.price-asterisk {
+  font-weight: 800;
+}
+
+.info-dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.info-dot:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.info-dot .tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.info-dot:hover .tooltip,
+.info-dot:focus .tooltip,
+.info-dot:focus-visible .tooltip {
+  opacity: 1;
+}
+
+.price-footnote {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .gallery-grid-masonry {
