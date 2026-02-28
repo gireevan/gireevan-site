@@ -28,6 +28,223 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/jpg" href="images/gireevan-logo.jpg">
+    <style>
+        .plan-hero-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #f3f7f5;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .plan-viewer {
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e7ece9;
+            overflow: hidden;
+        }
+
+        .plan-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-bottom: 1px solid #eef2ef;
+            background: linear-gradient(180deg, #fcfefd 0%, #f5f9f7 100%);
+        }
+
+        .plan-toolbar small {
+            color: #5f6f67;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .plan-toolbar-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .plan-btn {
+            border: 1px solid #cad6d0;
+            color: #12392d;
+            background: #fff;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.86rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .plan-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-1px);
+        }
+
+        .plan-image-wrap {
+            background:
+                linear-gradient(180deg, rgba(37, 89, 69, 0.03), rgba(37, 89, 69, 0.09)),
+                repeating-linear-gradient(90deg, transparent, transparent 23px, rgba(0, 0, 0, 0.03) 24px),
+                repeating-linear-gradient(0deg, transparent, transparent 23px, rgba(0, 0, 0, 0.03) 24px);
+            padding: 20px;
+        }
+
+        .plan-image-link {
+            border-radius: 12px;
+            border: 1px solid #dbe5e0;
+            overflow: hidden;
+            display: block;
+            background: var(--white);
+        }
+
+        .plan-image-link img {
+            width: 100%;
+            height: auto;
+        }
+
+        .plan-caption {
+            font-size: 0.88rem;
+            color: #5d6a64;
+            text-align: center;
+            padding: 12px 15px 4px;
+        }
+
+        .plan-info {
+            display: grid;
+            gap: 16px;
+        }
+
+        .plan-info-card {
+            background: var(--white);
+            border: 1px solid #e6ece8;
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .plan-kpi {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .plan-kpi div {
+            background: #f4f8f6;
+            border: 1px solid #e0e9e4;
+            border-radius: 10px;
+            padding: 10px 12px;
+        }
+
+        .plan-kpi strong {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .plan-kpi span {
+            color: #637069;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .plan-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .plan-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #425049;
+            line-height: 1.55;
+        }
+
+        .plan-list i {
+            margin-top: 4px;
+            color: var(--secondary-color);
+        }
+
+        .plan-cta {
+            background: linear-gradient(130deg, #143b2f 0%, #245f49 62%, #35785d 100%);
+            color: #eef7f2;
+            border-radius: 14px;
+            padding: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .plan-cta h3,
+        .plan-cta p {
+            color: inherit;
+            margin: 0;
+        }
+
+        .plan-cta p {
+            opacity: 0.94;
+        }
+
+        .plan-cta .btn {
+            white-space: nowrap;
+            background: #fff;
+            color: #154536;
+            border-color: #fff;
+        }
+
+        .plan-cta .btn:hover {
+            background: #f0f7f3;
+            color: #11392c;
+        }
+
+        @media (max-width: 1024px) {
+            .plan-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .plan-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .plan-kpi {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -70,101 +287,94 @@
         <!-- No separate hero-overlay needed as it's part of the background stack now -->
         <div class="hero-content">
             <h1 style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">Master Plan</h1>
-            <p style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">Coming Soon</p>
-            <p style="font-size: 1.2rem; margin-top: 10px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">We’re finalizing
-                the layout details. Share your interest and
-                we’ll notify you first.</p>
+            <p style="font-size: 1.2rem; margin-top: 10px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">Actual site
+                layout for Gireevan at Revoli-Pen with clear road network and open zones.</p>
+            <span class="plan-hero-note"><i class="fas fa-map-marked-alt"></i> Layout Plan 1:500</span>
         </div>
     </section>
 
-    <!-- Development Status & Timeline -->
+    <!-- Layout Overview -->
     <section class="section" style="background-color: var(--bg-color);">
         <div class="container">
-            <div class="text-center mb-40">
-                <h2>Project Timeline</h2>
-                <div style="display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 200px; text-align: center;">
-                        <i class="fas fa-check-circle text-success" style="font-size: 40px; margin-bottom: 10px;"></i>
-                        <h4>Land Acquisition</h4>
-                        <p style="color: #666;">Completed</p>
-                    </div>
-                    <div style="flex: 1; min-width: 200px; text-align: center;">
-                        <i class="fas fa-search-location text-success"
-                            style="font-size: 40px; margin-bottom: 10px;"></i>
-                        <h4>Survey & Demarcation</h4>
-                        <p style="color: #666;">Makeover In Progress</p>
-                    </div>
-                    <div style="flex: 1; min-width: 200px; text-align: center;">
-                        <i class="fas fa-drafting-compass text-secondary"
-                            style="font-size: 40px; margin-bottom: 10px;"></i>
-                        <h4>Master Layout</h4>
-                        <p style="color: #666;">Finalizing</p>
-                    </div>
-                    <div style="flex: 1; min-width: 200px; text-align: center; opacity: 0.5;">
-                        <i class="fas fa-map text-primary" style="font-size: 40px; margin-bottom: 10px;"></i>
-                        <h4>Launch</h4>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
+            <div class="text-center" style="max-width: 860px; margin: 0 auto 32px;">
+                <h2>Actual Site Layout</h2>
+                <p>This plan reflects the real site arrangement with numbered plots, internal roads, and open areas to
+                    help you evaluate access, shape, and surroundings at a glance.</p>
             </div>
-        </div>
-    </section>
+            <div class="plan-grid">
+                <figure class="plan-viewer">
+                    <div class="plan-toolbar">
+                        <small>Master Layout / Actual Site Plan</small>
+                        <div class="plan-toolbar-actions">
+                            <a class="plan-btn" href="images/master-layout-plan.png" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-magnifying-glass-plus"></i> Open Full Plan
+                            </a>
+                            <a class="plan-btn" href="master-layout-plan.pdf" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-file-pdf"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="plan-image-wrap">
+                        <a class="plan-image-link" href="images/master-layout-plan.png" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source srcset="images/master-layout-plan.webp" type="image/webp">
+                                <img src="images/master-layout-plan.png" width="3300" height="5100"
+                                    alt="Gireevan actual master layout plan showing numbered plots, roads and open areas.">
+                            </picture>
+                        </a>
+                        <figcaption class="plan-caption">Tap to zoom for plot numbers and exact positioning.</figcaption>
+                    </div>
+                </figure>
 
-    <!-- Preview & Interest Form -->
-    <section class="section">
-        <div class="container">
-            <div style="display: flex; flex-wrap: wrap; gap: 50px;">
-                <!-- Preview Cards -->
-                <div style="flex: 1; min-width: 300px;">
-                    <h3>What to Expect</h3>
-                    <p class="mb-20">A meticulously planned gated community designed for sustainable living.</p>
-
-                    <div
-                        style="background: white; padding: 20px; border-left: 4px solid var(--secondary-color); margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-                        <h4><i class="fas fa-ruler"></i> Wide Roads</h4>
-                        <p>Tree-lined internal roads for easy access to every plot.</p>
+                <div class="plan-info">
+                    <div class="plan-info-card">
+                        <h3 style="margin-bottom: 6px;">Quick Snapshot</h3>
+                        <p style="margin-bottom: 0; color: #55635d;">A concise view of the current plotted layout based
+                            on the approved drawing image.</p>
+                        <div class="plan-kpi">
+                            <div>
+                                <strong>109</strong>
+                                <span>Numbered Plots</span>
+                            </div>
+                            <div>
+                                <strong>2</strong>
+                                <span>Open Areas</span>
+                            </div>
+                            <div>
+                                <strong>1:500</strong>
+                                <span>Drawing Scale</span>
+                            </div>
+                            <div>
+                                <strong>Internal</strong>
+                                <span>Road Network</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div
-                        style="background: white; padding: 20px; border-left: 4px solid var(--secondary-color); margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-                        <h4><i class="fas fa-tint"></i> Water & Power</h4>
-                        <p>24x7 provision for water and electricity connectivity.</p>
+                    <div class="plan-info-card">
+                        <h3 style="margin-bottom: 10px;">How to Read This Plan</h3>
+                        <ul class="plan-list">
+                            <li><i class="fas fa-circle-check"></i>Plot numbers indicate individual units for enquiry
+                                and booking discussions.</li>
+                            <li><i class="fas fa-circle-check"></i>Green shades separate plot clusters and sizes for
+                                easier comparison.</li>
+                            <li><i class="fas fa-circle-check"></i>Beige pockets are open areas reserved for breathing
+                                space and shared use.</li>
+                            <li><i class="fas fa-circle-check"></i>Grey corridors indicate movement routes and site
+                                access connectivity.</li>
+                        </ul>
                     </div>
 
-                    <div
-                        style="background: white; padding: 20px; border-left: 4px solid var(--secondary-color); margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-                        <h4><i class="fas fa-tree"></i> Green Spaces</h4>
-                        <p>Dedicated gardens, walking tracks, and open community areas.</p>
-                    </div>
-                </div>
-
-                <!-- Get Updates Form -->
-                <div style="flex: 1; min-width: 300px;">
-                    <div
-                        class="form-card"
-                        style="background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
-                        <h3 class="mb-20">Get Notified First</h3>
-                        <p class="mb-20" style="color: #666;">Be the first to see the master plan and pick your
-                            preferred plot.</p>
-
-                        <form action="https://formspree.io/f/xzddzbry" method="POST">
-                            <label for="mp-name" class="sr-only">Your Name</label>
-                            <input id="mp-name" class="form-field" type="text" name="name" placeholder="Your Name" required>
-                            <label for="mp-phone" class="sr-only">Phone Number</label>
-                            <input id="mp-phone" class="form-field" type="tel" name="phone" placeholder="Phone Number" required>
-                            <label for="mp-interest" class="sr-only">I am interested in</label>
-                            <select id="mp-interest" class="form-field" name="interest" required>
-                                <option value="" disabled selected>I am interested in...</option>
-                                <option value="NA Plot">NA Plot</option>
-                                <option value="Bungalow">Bungalow</option>
-                                <option value="Investment">Investment</option>
-                            </select>
-                            <label for="mp-message" class="sr-only">Message</label>
-                            <textarea id="mp-message" class="form-field" name="message" rows="3" placeholder="Any specific requirements?"></textarea>
-                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                                Notify Me <i class="fas fa-bell"></i>
-                            </button>
-                        </form>
+                    <div class="plan-cta">
+                        <div>
+                            <h3>Need Help Shortlisting a Plot?</h3>
+                            <p>Share your size, budget and orientation preference. We will suggest matching options from
+                                this layout.</p>
+                        </div>
+                        <a href="contact.html" class="btn">Talk to Sales Team</a>
                     </div>
                 </div>
             </div>
