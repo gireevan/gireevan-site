@@ -1,214 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Location & Map | Gireevan Realty</title>
-    <meta name="description"
-        content="Find the Gireevan Realty site in Village Revoli, Pen, Raigad with driving directions, nearby stations, and map preview.">
-    <link rel="canonical" href="https://gireevan.com/location.html">
-    <meta property="og:title" content="Location & Map | Gireevan Realty">
-    <meta property="og:description"
-        content="Find the Gireevan Realty site in Village Revoli, Pen, Raigad with driving directions, nearby stations, and map preview.">
-    <meta property="og:url" content="https://gireevan.com/location.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://gireevan.com/images/gireevan-logo.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Location & Map | Gireevan Realty">
-    <meta name="twitter:description"
-        content="Find the Gireevan Realty site in Village Revoli, Pen, Raigad with driving directions, nearby stations, and map preview.">
-    <meta name="twitter:image" content="https://gireevan.com/images/gireevan-logo.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/jpg" href="images/gireevan-logo.jpg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location | Gireevan Realty — Revoli-Pen, Raigad</title>
+  <meta name="description" content="Gireevan is located in Revoli-Pen, Raigad — 1.5 hrs from Navi Mumbai via Mumbai-Goa Highway. Excellent connectivity and peaceful surroundings." />
+  <link rel="icon" href="images/gireevan-logo.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/gireevan-logo-128.webp" alt="Gireevan Realty" width="64" height="64">
-                    <div class="logo-text hide-mobile">
-                        <span class="brand-name">Gireevan Realty</span>
-                        <span class="brand-tagline">Where nature inspires</span>
-                    </div>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-item">Home</a>
-                    <a href="na-plots.html" class="nav-item">NA Plots</a>
-                    <a href="bungalows.html" class="nav-item">Bungalows</a>
-                    <a href="master-plan.html" class="nav-item">Master Plan</a>
-                    <a href="location.html" class="nav-item active">Location</a>
-                    <a href="gallery.html" class="nav-item">Gallery</a>
-                    <a href="contact.html" class="btn btn-primary btn-sm hide-mobile">Book Site Visit</a>
-                </div>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section"
-        style="background-image: url('images/hill-hd-4.jpg'); background-size: cover; background-position: center; height: 480px; position: relative;">
-        <div class="hero-overlay"
-            style="background: linear-gradient(180deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.60) 100%);">
-        </div>
-        <div class="hero-content">
-            <h1>Strategic Location</h1>
-            <p>Peaceful Konkan surroundings, yet close to the city.</p>
-        </div>
-    </section>
+<canvas id="particle-canvas"></canvas>
 
-    <!-- Location Highlights -->
-    <section class="section">
-        <div class="container">
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: -80px; position: relative; z-index: 2;">
-                <div class="highlight-card">
-                    <i class="fas fa-mountain"
-                        style="font-size: 32px; color: var(--secondary-color); margin-bottom: 15px;"></i>
-                    <h3>Konkan Serenity</h3>
-                    <p>Surrounded by lush green Sahyadri hills and fresh air, nestled in the heart of nature.</p>
-                    <div class="trust-badge"><i class="fas fa-check-circle"></i> Pollution Free</div>
-                </div>
-                <div class="highlight-card">
-                    <i class="fas fa-road"
-                        style="font-size: 32px; color: var(--secondary-color); margin-bottom: 15px;"></i>
-                    <h3>Well Connected</h3>
-                    <p>Just a short drive from shimmering beaches and the Mumbai-Goa highway.</p>
-                    <div class="trust-badge"><i class="fas fa-check-circle"></i> Easy Access</div>
-                </div>
-                <div class="highlight-card">
-                    <i class="fas fa-chart-line"
-                        style="font-size: 32px; color: var(--secondary-color); margin-bottom: 15px;"></i>
-                    <h3>Smart Investment</h3>
-                    <p>An emerging weekend destination with high appreciation potential.</p>
-                    <div class="trust-badge"><i class="fas fa-check-circle"></i> High Growth</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map & Directions -->
-    <section class="section" style="background-color: var(--bg-color);">
-        <div class="container">
-            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
-                    <h2>Find Your Way Home</h2>
-                    <p class="mb-20">Located in Village Revoli, Pen, Raigad. Experience the drive through scenic
-                        landscapes.</p>
-                    <ul class="mb-40" style="padding-left: 20px; list-style-type: disc; color: #555;">
-                        <li class="mb-20"><strong>From Mumbai:</strong> Approx 1.5 - 2 Hours via Mumbai-Goa Highway.
-                        </li>
-                        <li class="mb-20"><strong>From Pune:</strong> Approx 2 - 2.5 Hours via Expressway & Khopoli.
-                        </li>
-                        <li class="mb-20"><strong>Nearest Station:</strong> Pen Railway Station (15 mins away).</li>
-                    </ul>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Revoli+Pen+Raigad" target="_blank"
-                        class="btn btn-primary">
-                        <i class="fas fa-map-marked-alt"></i> Get Directions
-                    </a>
-                </div>
-                <div
-                    style="flex: 1; min-width: 300px; height: 450px; background: #e0e0e0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <!-- Google Map Placeholder -->
-                    <iframe
-                        src="https://www.google.com/maps?q=Revoli+Pen+Raigad&output=embed"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        title="Map showing Revoli Pen Raigad location">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div>
-                    <a href="index.html" class="logo"
-                        style="margin-bottom: 20px; display: inline-flex; align-items: center; gap: 12px;">
-                        <img src="images/gireevan-logo-128.webp" alt="Logo" width="56" height="56" style="height: 56px; border-radius: 4px;">
-                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
-                            <span
-                                style="font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; color: var(--text-color);">Gireevan
-                                Realty</span>
-                            <span
-                                style="font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Where
-                                nature inspires</span>
-                        </div>
-                    </a>
-                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">Premium NA plots and sustainable
-                        bungalows in the heart of Konkan. Creating communities that coexist with nature.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="na-plots.html">Plots</a></li>
-                        <li><a href="bungalows.html">Bungalows</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p class="mb-10"><i class="fas fa-map-marker-alt"
-                            style="color: var(--primary-color); width: 20px;"></i> Gat No. 84, 85 & 86, Village
-                        Revoli,<br>Taluka Pen, Dist. Raigad 402107</p>
-                    <p><i class="fas fa-phone"></i> +91 95947 43727</p>
-                    <p><i class="fas fa-envelope"></i> info@gireevan.com</p>
-                    <div class="social-row" aria-label="Social links">
-                    <a href="https://www.facebook.com/gireevan" target="_blank" aria-label="Facebook" class="facebook-link"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-                    <a href="https://www.instagram.com/gireevanrealtyllp" target="_blank" aria-label="Instagram" class="instagram-link"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
-                    <a href="https://www.linkedin.com/company/gireevanrealtyllp/" target="_blank" aria-label="LinkedIn" class="linkedin-link"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright text-center" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px;">
-                <p>&copy; 2026 Gireevan Realty. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <a href="https://wa.me/919594743727" class="sticky-whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/gireevan-logo.jpeg" alt="Gireevan Realty Logo" />
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Gireevan Realty</span>
+        <span class="nav-logo-tagline">Where nature inspires</span>
+      </div>
     </a>
-    <div class="mobile-bottom-bar">
-        <!-- Sticky Mobile Nav Items -->
-        <a href="tel:+919594743727"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fas fa-phone-alt" style="font-size: 20px; color: var(--primary-color);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Call</span>
-        </a>
-        <a href="https://wa.me/919594743727"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fab fa-whatsapp" style="font-size: 20px; color: var(--success);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Chat</span>
-        </a>
-        <a href="contact.html"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fas fa-calendar-check" style="font-size: 20px; color: var(--secondary-color);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Book Visit</span>
-        </a>
-    </div>
-    <script src="js/main.js" defer></script>
-    <script>
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function () {
-                this.onerror = null;
-                this.src = 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80';
-            };
-        });
-    </script>
-</body>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="na-plots.html">NA Plots</a></li>
+      <li><a href="bungalows.html">Bungalows</a></li>
+      <li><a href="master-plan.html">Master Plan</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Site Visit</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="na-plots.html">NA Plots</a>
+  <a href="bungalows.html">Bungalows</a>
+  <a href="master-plan.html">Master Plan</a>
+  <a href="location.html">Location</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Book Site Visit</a>
+</div>
 
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">Where We Are</div>
+    <h1>Revoli-Pen, Raigad</h1>
+    <p>Strategically located for peace and nature, yet well-connected to Mumbai and Pune.</p>
+    <div class="page-hero-divider"></div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Revoli+Pen+Raigad" target="_blank" rel="noopener" class="btn btn-primary">
+        📍 Get Directions
+      </a>
+      <a href="contact.html" class="btn btn-outline">Book Site Visit</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAP + DISTANCES -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="location-grid">
+      <div class="reveal">
+        <div class="location-map-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=Gat+No+84+85+86+Village+Revoli+Taluka+Pen+Raigad&output=embed"
+            title="Gireevan Realty Location"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div style="margin-top:1rem;text-align:center;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Revoli+Pen+Raigad" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.85rem;">
+            🗺️ Open in Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="section-label" style="margin-bottom:0.75rem;">Connectivity</div>
+        <h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--text-primary);margin-bottom:1.5rem;">Key Distances</h2>
+        <ul class="distance-list">
+          <li class="distance-item">
+            <span class="dist-icon">🚂</span>
+            <div class="dist-info">
+              <div class="dist-place">Pen Railway Station</div>
+              <div class="dist-detail">Central Railway — direct Mumbai access</div>
+            </div>
+            <div class="dist-time">15 min</div>
+          </li>
+          <li class="distance-item">
+            <span class="dist-icon">🏙️</span>
+            <div class="dist-info">
+              <div class="dist-place">Navi Mumbai / Panvel</div>
+              <div class="dist-detail">Via Mumbai-Goa Highway (NH-66)</div>
+            </div>
+            <div class="dist-time">1.5 hr</div>
+          </li>
+          <li class="distance-item">
+            <span class="dist-icon">🌆</span>
+            <div class="dist-info">
+              <div class="dist-place">Mumbai City</div>
+              <div class="dist-detail">Via Nhava Sheva / Vashi</div>
+            </div>
+            <div class="dist-time">2 hr</div>
+          </li>
+          <li class="distance-item">
+            <span class="dist-icon">🌊</span>
+            <div class="dist-info">
+              <div class="dist-place">Alibaug Beach</div>
+              <div class="dist-detail">Popular coastal destination</div>
+            </div>
+            <div class="dist-time">45 min</div>
+          </li>
+          <li class="distance-item">
+            <span class="dist-icon">🏥</span>
+            <div class="dist-info">
+              <div class="dist-place">Pen Town (Hospitals)</div>
+              <div class="dist-detail">Markets, hospitals, schools</div>
+            </div>
+            <div class="dist-time">15 min</div>
+          </li>
+          <li class="distance-item">
+            <span class="dist-icon">🏰</span>
+            <div class="dist-info">
+              <div class="dist-place">Janjira Fort</div>
+              <div class="dist-detail">Historic Konkan landmark</div>
+            </div>
+            <div class="dist-time">1 hr</div>
+          </li>
+          <li class="distance-item">
+            <span class="dist-icon">✈️</span>
+            <div class="dist-info">
+              <div class="dist-place">CSMI Airport, Mumbai</div>
+              <div class="dist-detail">Via Panvel / Eastern Freeway</div>
+            </div>
+            <div class="dist-time">2.5 hr</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADDRESS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Our Address</div>
+      <h2 class="section-title">Find <span>Gireevan</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" class="amenities-grid">
+      <div class="contact-info-card reveal">
+        <div class="ci-icon">📍</div>
+        <div class="ci-content">
+          <h4>Address</h4>
+          <p>Gat No. 84, 85 & 86,<br>Village Revoli, Taluka Pen,<br>Dist. Raigad — 402107</p>
+        </div>
+      </div>
+      <div class="contact-info-card reveal reveal-delay-1">
+        <div class="ci-icon">🚘</div>
+        <div class="ci-content">
+          <h4>By Road</h4>
+          <p>NH-66 (Mumbai-Goa Highway) → Pen exit → Revoli Village. Our team can share precise pin drop.</p>
+        </div>
+      </div>
+      <div class="contact-info-card reveal reveal-delay-2">
+        <div class="ci-icon">🚂</div>
+        <div class="ci-content">
+          <h4>By Train</h4>
+          <p>Alight at Pen Railway Station. Site visit pickup available — just inform our team in advance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY KONKAN -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">The Konkan Advantage</div>
+      <h2 class="section-title">Why <span>Konkan</span> is the Future</h2>
+      <p class="section-subtitle">A region transforming into Maharashtra's most sought-after real estate destination.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card reveal reveal-delay-1">
+        <div class="highlight-icon">📈</div>
+        <h3>High Appreciation</h3>
+        <p>Konkan coastal and inland areas have seen 20–35% appreciation over the last 5 years as Mumbai expands southward.</p>
+      </div>
+      <div class="highlight-card reveal reveal-delay-2">
+        <div class="highlight-icon">🛤️</div>
+        <h3>Infrastructure Boom</h3>
+        <p>Mumbai Trans-Harbour Link, Mumbai-Goa Highway expansion, and upcoming Alibaug-Virar Multimodal Corridor.</p>
+      </div>
+      <div class="highlight-card reveal reveal-delay-3">
+        <div class="highlight-icon">🌿</div>
+        <h3>Nature & Wellness</h3>
+        <p>As city stress rises, demand for nature retreats near Mumbai is at an all-time high. Weekend homes are no longer a luxury — they're a necessity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Visit and Feel the <span>Difference</span></h2>
+      <p>Words can't capture the Konkan air and greenery. Come see it for yourself — we'll arrange the visit.</p>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn btn-gold">📅 Book a Site Visit</a>
+        <a href="https://wa.me/919594743727" target="_blank" rel="noopener" class="btn btn-outline">💬 WhatsApp Us</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Revoli+Pen+Raigad" target="_blank" rel="noopener" class="btn btn-outline">📍 Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="images/gireevan-logo.jpeg" alt="Gireevan Realty" />
+        <div><span class="footer-logo-name">Gireevan Realty</span><span class="footer-logo-tagline">Where nature inspires</span></div>
+      </a>
+      <p>Premium NA plots and sustainable bungalows in the heart of Konkan.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/gireevan" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.instagram.com/gireevanrealtyllp" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://www.linkedin.com/company/gireevanrealtyllp/" target="_blank" rel="noopener" class="social-btn">Li</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="na-plots.html">NA Plots</a></li>
+        <li><a href="bungalows.html">Bungalows</a></li>
+        <li><a href="master-plan.html">Master Plan</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <ul>
+        <li><span class="fi">📍</span><span>Revoli, Pen, Raigad 402107</span></li>
+        <li><span class="fi">📞</span><a href="tel:+919594743727">+91 95947 43727</a></li>
+        <li><span class="fi">✉️</span><a href="mailto:info@gireevan.com">info@gireevan.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Gireevan Realty LLP. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919594743727" target="_blank" rel="noopener" class="wa-btn">💬</a>
+</div>
+
+<script src="scripts.js"></script>
+</body>
 </html>

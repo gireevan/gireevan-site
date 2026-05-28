@@ -1,472 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Plan | Gireevan Realty</title>
-    <meta name="description"
-        content="Explore the Gireevan master plan with layout, zoning, and amenity highlights for NA plots and bungalows in Revoli-Pen.">
-    <link rel="canonical" href="https://gireevan.com/master-plan.html">
-    <meta property="og:title" content="Master Plan | Gireevan Realty">
-    <meta property="og:description"
-        content="Explore the Gireevan master plan with layout, zoning, and amenity highlights for NA plots and bungalows in Revoli-Pen.">
-    <meta property="og:url" content="https://gireevan.com/master-plan.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://gireevan.com/images/gireevan-logo.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Master Plan | Gireevan Realty">
-    <meta name="twitter:description"
-        content="Explore the Gireevan master plan with layout, zoning, and amenity highlights for NA plots and bungalows in Revoli-Pen.">
-    <meta name="twitter:image" content="https://gireevan.com/images/gireevan-logo.jpg">
-    <!-- Stylesheets and Fonts same as Index -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/jpg" href="images/gireevan-logo.jpg">
-    <style>
-        .plan-hero-note {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 8px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.15);
-            color: #f3f7f5;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-size: 0.78rem;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .plan-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-            gap: 26px;
-            align-items: stretch;
-        }
-
-        .plan-viewer {
-            background: var(--white);
-            border-radius: 14px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid #e7ece9;
-            overflow: hidden;
-        }
-
-        .plan-toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            border-bottom: 1px solid #eef2ef;
-            background: linear-gradient(180deg, #fcfefd 0%, #f5f9f7 100%);
-        }
-
-        .plan-toolbar small {
-            color: #5f6f67;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        .plan-toolbar-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .plan-btn {
-            border: 1px solid #cad6d0;
-            color: #12392d;
-            background: #fff;
-            font-weight: 700;
-            border-radius: 999px;
-            padding: 8px 14px;
-            font-size: 0.86rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .plan-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            box-shadow: var(--shadow-sm);
-            transform: translateY(-1px);
-        }
-
-        .plan-image-wrap {
-            background:
-                linear-gradient(180deg, rgba(37, 89, 69, 0.03), rgba(37, 89, 69, 0.09)),
-                repeating-linear-gradient(90deg, transparent, transparent 23px, rgba(0, 0, 0, 0.03) 24px),
-                repeating-linear-gradient(0deg, transparent, transparent 23px, rgba(0, 0, 0, 0.03) 24px);
-            padding: 20px;
-        }
-
-        .plan-image-link {
-            border-radius: 12px;
-            border: 1px solid #dbe5e0;
-            overflow: hidden;
-            display: block;
-            background: var(--white);
-        }
-
-        .plan-image-link img {
-            width: 100%;
-            height: auto;
-        }
-
-        .plan-caption {
-            font-size: 0.88rem;
-            color: #5d6a64;
-            text-align: center;
-            padding: 12px 15px 4px;
-        }
-
-        .plan-info {
-            display: grid;
-            gap: 16px;
-        }
-
-        .plan-info-card {
-            background: var(--white);
-            border: 1px solid #e6ece8;
-            border-radius: 12px;
-            padding: 22px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .plan-kpi {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin-top: 14px;
-        }
-
-        .plan-kpi div {
-            background: #f4f8f6;
-            border: 1px solid #e0e9e4;
-            border-radius: 10px;
-            padding: 10px 12px;
-        }
-
-        .plan-kpi strong {
-            display: block;
-            font-size: 1.05rem;
-            color: var(--primary-color);
-            line-height: 1.2;
-        }
-
-        .plan-kpi span {
-            color: #637069;
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .plan-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: grid;
-            gap: 12px;
-        }
-
-        .plan-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: #425049;
-            line-height: 1.55;
-        }
-
-        .plan-list i {
-            margin-top: 4px;
-            color: var(--secondary-color);
-        }
-
-        .plan-cta {
-            background: linear-gradient(130deg, #143b2f 0%, #245f49 62%, #35785d 100%);
-            color: #eef7f2;
-            border-radius: 14px;
-            padding: 28px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .plan-cta h3,
-        .plan-cta p {
-            color: inherit;
-            margin: 0;
-        }
-
-        .plan-cta p {
-            opacity: 0.94;
-        }
-
-        .plan-cta .btn {
-            white-space: nowrap;
-            background: #fff;
-            color: #154536;
-            border-color: #fff;
-        }
-
-        .plan-cta .btn:hover {
-            background: #f0f7f3;
-            color: #11392c;
-        }
-
-        @media (max-width: 1024px) {
-            .plan-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .plan-toolbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .plan-kpi {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Plan | Gireevan Realty</title>
+  <meta name="description" content="View the actual site layout of Gireevan — numbered plots, roads, open areas and amenity zones in Revoli-Pen." />
+  <link rel="icon" href="images/gireevan-logo.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/gireevan-logo-128.webp" alt="Gireevan Realty" width="64" height="64">
-                    <div class="logo-text hide-mobile">
-                        <span class="brand-name">Gireevan Realty</span>
-                        <span class="brand-tagline">Where nature inspires</span>
-                    </div>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-item">Home</a>
-                    <a href="na-plots.html" class="nav-item">NA Plots</a>
-                    <a href="bungalows.html" class="nav-item">Bungalows</a>
-                    <a href="master-plan.html" class="nav-item active">Master Plan</a>
-                    <a href="location.html" class="nav-item">Location</a>
-                    <a href="gallery.html" class="nav-item">Gallery</a>
-                    <a href="contact.html" class="btn btn-primary btn-sm hide-mobile">Book Site Visit</a>
-                </div>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-    <section class="hero-section" style="background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.60) 100%), 
-        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), 
-        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), 
-        url('images/plot-aerial-1.jpg'); 
-        background-size: cover, 40px 40px, 40px 40px, cover; 
-        background-position: center; 
-        height: 480px; 
-        position: relative;">
-        <!-- No separate hero-overlay needed as it's part of the background stack now -->
-        <div class="hero-content">
-            <h1 style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">Master Plan</h1>
-            <p style="font-size: 1.2rem; margin-top: 10px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">Actual site
-                layout for Gireevan at Revoli-Pen with clear road network and open zones.</p>
-            <span class="plan-hero-note"><i class="fas fa-map-marked-alt"></i> Layout Plan 1:500</span>
-        </div>
-    </section>
+<canvas id="particle-canvas"></canvas>
 
-    <!-- Layout Overview -->
-    <section class="section" style="background-color: var(--bg-color);">
-        <div class="container">
-            <div class="text-center" style="max-width: 860px; margin: 0 auto 32px;">
-                <h2>Actual Site Layout</h2>
-                <p>This plan reflects the real site arrangement with numbered plots, internal roads, and open areas to
-                    help you evaluate access, shape, and surroundings at a glance.</p>
-            </div>
-            <div class="plan-grid">
-                <figure class="plan-viewer">
-                    <div class="plan-toolbar">
-                        <small>Master Layout / Actual Site Plan</small>
-                        <div class="plan-toolbar-actions">
-                            <a class="plan-btn" href="images/master-layout-plan.png" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="fas fa-magnifying-glass-plus"></i> Open Full Plan
-                            </a>
-                            <a class="plan-btn" href="master-layout-plan.pdf" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="fas fa-file-pdf"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-                    <div class="plan-image-wrap">
-                        <a class="plan-image-link" href="images/master-layout-plan.png" target="_blank"
-                            rel="noopener noreferrer">
-                            <picture>
-                                <source srcset="images/master-layout-plan.webp" type="image/webp">
-                                <img src="images/master-layout-plan.png" width="3300" height="5100"
-                                    alt="Gireevan actual master layout plan showing numbered plots, roads and open areas.">
-                            </picture>
-                        </a>
-                        <figcaption class="plan-caption">Tap to zoom for plot numbers and exact positioning.</figcaption>
-                    </div>
-                </figure>
-
-                <div class="plan-info">
-                    <div class="plan-info-card">
-                        <h3 style="margin-bottom: 6px;">Quick Snapshot</h3>
-                        <p style="margin-bottom: 0; color: #55635d;">A concise view of the current plotted layout based
-                            on the approved drawing image.</p>
-                        <div class="plan-kpi">
-                            <div>
-                                <strong>109</strong>
-                                <span>Numbered Plots</span>
-                            </div>
-                            <div>
-                                <strong>2</strong>
-                                <span>Open Areas</span>
-                            </div>
-                            <div>
-                                <strong>1:500</strong>
-                                <span>Drawing Scale</span>
-                            </div>
-                            <div>
-                                <strong>Internal</strong>
-                                <span>Road Network</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="plan-info-card">
-                        <h3 style="margin-bottom: 10px;">How to Read This Plan</h3>
-                        <ul class="plan-list">
-                            <li><i class="fas fa-circle-check"></i>Plot numbers indicate individual units for enquiry
-                                and booking discussions.</li>
-                            <li><i class="fas fa-circle-check"></i>Green shades separate plot clusters and sizes for
-                                easier comparison.</li>
-                            <li><i class="fas fa-circle-check"></i>Beige pockets are open areas reserved for breathing
-                                space and shared use.</li>
-                            <li><i class="fas fa-circle-check"></i>Grey corridors indicate movement routes and site
-                                access connectivity.</li>
-                        </ul>
-                    </div>
-
-                    <div class="plan-cta">
-                        <div>
-                            <h3>Need Help Shortlisting a Plot?</h3>
-                            <p>Share your size, budget and orientation preference. We will suggest matching options from
-                                this layout.</p>
-                        </div>
-                        <a href="contact.html" class="btn">Talk to Sales Team</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div>
-                    <a href="index.html" class="logo"
-                        style="margin-bottom: 20px; display: inline-flex; align-items: center; gap: 12px;">
-                        <img src="images/gireevan-logo-128.webp" alt="Logo" width="56" height="56" style="height: 56px; border-radius: 4px;">
-                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
-                            <span
-                                style="font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; color: var(--text-color);">Gireevan
-                                Realty</span>
-                            <span
-                                style="font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Where
-                                nature inspires</span>
-                        </div>
-                    </a>
-                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">Premium NA plots and sustainable
-                        bungalows in the heart of Konkan. Creating communities that coexist with nature.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="na-plots.html">NA Plots</a></li>
-                        <li><a href="bungalows.html">Bungalows</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p class="mb-10"><i class="fas fa-map-marker-alt"
-                            style="color: var(--primary-color); width: 20px;"></i> Gat No. 84, 85 & 86, Village
-                        Revoli,<br>Taluka
-                        Pen, Dist. Raigad 402107</p>
-                    <p class="mb-10"><i class="fas fa-phone" style="color: var(--primary-color); width: 20px;"></i> <a
-                            href="tel:+919594743727" style="color: inherit;">+91 95947 43727</a></p>
-                    <p><i class="fas fa-envelope" style="color: var(--primary-color); width: 20px;"></i> <a
-                            href="mailto:info@gireevan.com" style="color: inherit;">info@gireevan.com</a></p>
-                    <div class="social-row" aria-label="Social links">
-                    <a href="https://www.facebook.com/gireevan" target="_blank" aria-label="Facebook" class="facebook-link"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-                    <a href="https://www.instagram.com/gireevanrealtyllp" target="_blank" aria-label="Instagram" class="instagram-link"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
-                    <a href="https://www.linkedin.com/company/gireevanrealtyllp/" target="_blank" aria-label="LinkedIn" class="linkedin-link"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 20px 0;">
-
-            <div class="copyright text-center" style="font-size: 0.85rem; color: #777;">
-                <p>&copy; 2026 Gireevan Realty. All Rights Reserved. | <a href="#"
-                        style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
-                <p style="margin-top: 5px; font-size: 0.75rem;">Images courtesy of Unsplash & Pexels.</p>
-            </div>
-        </div>
-    </footer>
-    <a href="https://wa.me/919594743727" class="sticky-whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/gireevan-logo.jpeg" alt="Gireevan Realty Logo" />
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Gireevan Realty</span>
+        <span class="nav-logo-tagline">Where nature inspires</span>
+      </div>
     </a>
-    <div class="mobile-bottom-bar">
-        <a href="tel:+919594743727"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fas fa-phone-alt" style="font-size: 20px; color: var(--primary-color);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Call</span>
-        </a>
-        <a href="https://wa.me/919594743727"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fab fa-whatsapp" style="font-size: 20px; color: var(--success);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Chat</span>
-        </a>
-        <a href="contact.html"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fas fa-calendar-check" style="font-size: 20px; color: var(--secondary-color);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Book Visit</span>
-        </a>
-    </div>
-    <script src="js/main.js" defer></script>
-    <script>
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function () {
-                this.onerror = null;
-                this.src = 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80';
-            };
-        });
-    </script>
-</body>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="na-plots.html">NA Plots</a></li>
+      <li><a href="bungalows.html">Bungalows</a></li>
+      <li><a href="master-plan.html">Master Plan</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Site Visit</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="na-plots.html">NA Plots</a>
+  <a href="bungalows.html">Bungalows</a>
+  <a href="master-plan.html">Master Plan</a>
+  <a href="location.html">Location</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Book Site Visit</a>
+</div>
 
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">Site Layout</div>
+    <h1>Master Plan</h1>
+    <p>Explore the actual plotted arrangement, internal roads, open spaces, and amenity zones before making your choice.</p>
+    <div class="page-hero-divider"></div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://gireevan.com/master-layout-plan.pdf" target="_blank" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Download PDF
+      </a>
+      <a href="contact.html" class="btn btn-outline">Enquire About a Plot</a>
+    </div>
+  </div>
+</div>
+
+<!-- PLAN IMAGE -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="master-plan-full reveal">
+      <img src="images/master-layout-plan.png" alt="Gireevan Master Layout Plan — showing numbered plots, roads, and open zones" />
+    </div>
+
+    <!-- LEGEND -->
+    <div class="plan-legend reveal" style="margin-top:2.5rem;">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#22C55E;"></div>
+        <span>Residential Plots</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#C9A84C;"></div>
+        <span>Internal Tar Roads</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#4ADE80;"></div>
+        <span>Green Open Zones</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#0EA5E9;"></div>
+        <span>Amenity Areas</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="https://gireevan.com/master-layout-plan.pdf" target="_blank" class="btn btn-gold">
+        📥 Download Full Master Plan PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE INFO -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Layout Overview</div>
+      <h2 class="section-title">What's in the <span>Township</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-item reveal reveal-delay-1">
+        <span class="amenity-icon">🏡</span>
+        <div class="amenity-name">Numbered Plots</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-1">
+        <span class="amenity-icon">🛤️</span>
+        <div class="amenity-name">Tar Road Network</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-2">
+        <span class="amenity-icon">🌳</span>
+        <div class="amenity-name">Green Open Zones</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-2">
+        <span class="amenity-icon">🔒</span>
+        <div class="amenity-name">Gated Entry</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-3">
+        <span class="amenity-icon">🏛️</span>
+        <div class="amenity-name">Clubhouse Zone</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-3">
+        <span class="amenity-icon">🏃</span>
+        <div class="amenity-name">Jogger's Track</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-4">
+        <span class="amenity-icon">🎠</span>
+        <div class="amenity-name">Kids Playzone</div>
+      </div>
+      <div class="amenity-item reveal reveal-delay-4">
+        <span class="amenity-icon">💧</span>
+        <div class="amenity-name">Water + Utility Lines</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Like What You <span>See?</span></h2>
+      <p>Visit the site in person, walk through the plots, and feel the peaceful Konkan ambiance before deciding.</p>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn btn-gold">📅 Book a Site Visit</a>
+        <a href="na-plots.html" class="btn btn-outline">View Plots</a>
+        <a href="bungalows.html" class="btn btn-outline">View Bungalows</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="images/gireevan-logo.jpeg" alt="Gireevan Realty" />
+        <div><span class="footer-logo-name">Gireevan Realty</span><span class="footer-logo-tagline">Where nature inspires</span></div>
+      </a>
+      <p>Premium NA plots and sustainable bungalows in the heart of Konkan.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/gireevan" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.instagram.com/gireevanrealtyllp" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://www.linkedin.com/company/gireevanrealtyllp/" target="_blank" rel="noopener" class="social-btn">Li</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="na-plots.html">NA Plots</a></li>
+        <li><a href="bungalows.html">Bungalows</a></li>
+        <li><a href="master-plan.html">Master Plan</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <ul>
+        <li><span class="fi">📍</span><span>Revoli, Pen, Raigad 402107</span></li>
+        <li><span class="fi">📞</span><a href="tel:+919594743727">+91 95947 43727</a></li>
+        <li><span class="fi">✉️</span><a href="mailto:info@gireevan.com">info@gireevan.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Gireevan Realty LLP. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919594743727" target="_blank" rel="noopener" class="wa-btn">💬</a>
+</div>
+
+<script src="scripts.js"></script>
+</body>
 </html>

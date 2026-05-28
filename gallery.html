@@ -1,221 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Gallery | Gireevan Realty</title>
-    <meta name="description"
-        content="View photos of our NA plots, bungalows, and the beautiful natural surroundings of Revoli-Pen.">
-    <link rel="canonical" href="https://gireevan.com/gallery.html">
-    <meta property="og:title" content="Photo Gallery | Gireevan Realty">
-    <meta property="og:description"
-        content="View photos of our NA plots, bungalows, and the beautiful natural surroundings of Revoli-Pen.">
-    <meta property="og:url" content="https://gireevan.com/gallery.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://gireevan.com/images/gireevan-logo.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Photo Gallery | Gireevan Realty">
-    <meta name="twitter:description"
-        content="View photos of our NA plots, bungalows, and the beautiful natural surroundings of Revoli-Pen.">
-    <meta name="twitter:image" content="https://gireevan.com/images/gireevan-logo.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/jpg" href="images/gireevan-logo.jpg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Gireevan Realty</title>
+  <meta name="description" content="Browse photos of Gireevan's NA plots, luxury bungalows, amenities and surrounding Konkan landscape." />
+  <link rel="icon" href="images/gireevan-logo.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gallery-grid-full {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      transition: transform 0.3s var(--ease), opacity 0.3s;
+    }
+    .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+    @media (max-width: 768px) {
+      .gallery-grid-full { grid-template-columns: 1fr 1fr; }
+      .gallery-item.wide { grid-column: span 2; }
+      .gallery-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid-full { grid-template-columns: 1fr; }
+      .gallery-item.wide { grid-column: span 1; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/gireevan-logo-128.webp" alt="Gireevan Realty" width="64" height="64">
-                    <div class="logo-text hide-mobile">
-                        <span class="brand-name">Gireevan Realty</span>
-                        <span class="brand-tagline">Where nature inspires</span>
-                    </div>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-item">Home</a>
-                    <a href="na-plots.html" class="nav-item">NA Plots</a>
-                    <a href="bungalows.html" class="nav-item">Bungalows</a>
-                    <a href="master-plan.html" class="nav-item">Master Plan</a>
-                    <a href="location.html" class="nav-item">Location</a>
-                    <a href="gallery.html" class="nav-item active">Gallery</a>
-                    <a href="contact.html" class="btn btn-primary btn-sm hide-mobile">Book Site Visit</a>
-                </div>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
+<canvas id="particle-canvas"></canvas>
 
-    <!-- Hero -->
-    <section class="hero-section"
-        style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80'); height: 50vh;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Gallery</h1>
-            <p>Monsoon greenery, open plots, and scenic beauty.</p>
-        </div>
-    </section>
-
-    <!-- Gallery Grid -->
-    <section class="section">
-        <div class="container">
-            <!-- Filter Buttons (Simplified) -->
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="bungalows">Bungalows</button>
-                <button class="filter-btn" data-filter="nature">Nature</button>
-                <button class="filter-btn" data-filter="amenities">Amenities</button>
-            </div>
-
-            <!-- Masonry Grid -->
-            <div class="gallery-grid-masonry">
-                <!-- Bungalows -->
-                <div class="gallery-item" data-category="bungalows">
-                    <img src="images/final-type1.jpg" loading="lazy" alt="Cozy Cottage">
-                    <div class="gallery-caption">Cozy Cottage</div>
-                </div>
-                <div class="gallery-item" data-category="bungalows">
-                    <img src="images/final-type2.jpg" loading="lazy" alt="Family Villa">
-                    <div class="gallery-caption">Family Villa</div>
-                </div>
-                <div class="gallery-item" data-category="bungalows">
-                    <img src="images/final-type3.jpg" loading="lazy" alt="Luxury Estate">
-                    <div class="gallery-caption">Luxury Estate</div>
-                </div>
-
-                <!-- Nature & Exteriors -->
-                <div class="gallery-item" data-category="nature">
-                    <img src="images/final-ext-1.jpg" loading="lazy" alt="Lush Gardens">
-                    <div class="gallery-caption">Lush Gardens</div>
-                </div>
-                <div class="gallery-item" data-category="nature">
-                    <img src="images/final-ext-2.jpg" loading="lazy" alt="Modern Architecture">
-                    <div class="gallery-caption">Modern Exteriors</div>
-                </div>
-                <div class="gallery-item" data-category="nature">
-                    <img src="images/final-ext-3.jpg" loading="lazy" alt="Scenic Nature Trails">
-                    <div class="gallery-caption">Scenic Nature Trails</div>
-                </div>
-
-                <!-- Amenities -->
-                <div class="gallery-item" data-category="amenities">
-                    <img src="images/children-ride-from-children-s-slide-sisters-play-together-garden.jpg"
-                        loading="lazy" alt="Kids Playzone">
-                    <div class="gallery-caption">Kids Playzone</div>
-                </div>
-                <div class="gallery-item" data-category="amenities">
-                    <img src="images/young-fitness-woman-running-park-morning-sport-lifestyle-concept.jpg"
-                        loading="lazy" alt="Jogger Park Track">
-                    <div class="gallery-caption">Jogger Park Track</div>
-                </div>
-                <div class="gallery-item" data-category="amenities">
-                    <img src="images/beautiful-girl-runs-into-autumn-bali.jpg"
-                        loading="lazy" alt="Morning Jogging Area">
-                    <div class="gallery-caption">Morning Jogging Area</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div>
-                    <a href="index.html" class="logo"
-                        style="margin-bottom: 20px; display: inline-flex; align-items: center; gap: 12px;">
-                        <img src="images/gireevan-logo-128.webp" alt="Logo" width="56" height="56" style="height: 56px; border-radius: 4px;">
-                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
-                            <span
-                                style="font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; color: var(--text-color);">Gireevan
-                                Realty</span>
-                            <span
-                                style="font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Where
-                                nature inspires</span>
-                        </div>
-                    </a>
-                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">Premium NA plots and sustainable
-                        bungalows in the heart of Konkan. Creating communities that coexist with nature.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="na-plots.html">NA Plots</a></li>
-                        <li><a href="bungalows.html">Bungalows</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p class="mb-10"><i class="fas fa-map-marker-alt"
-                            style="color: var(--primary-color); width: 20px;"></i> Gat No. 84, 85 & 86, Village
-                        Revoli,<br>Taluka
-                        Pen, Dist. Raigad 402107</p>
-                    <p class="mb-10"><i class="fas fa-phone" style="color: var(--primary-color); width: 20px;"></i> <a
-                            href="tel:+919594743727" style="color: inherit;">+91 95947 43727</a></p>
-                    <p><i class="fas fa-envelope" style="color: var(--primary-color); width: 20px;"></i> <a
-                            href="mailto:info@gireevan.com" style="color: inherit;">info@gireevan.com</a></p>
-                    <div class="social-row" aria-label="Social links">
-                    <a href="https://www.facebook.com/gireevan" target="_blank" aria-label="Facebook" class="facebook-link"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-                    <a href="https://www.instagram.com/gireevanrealtyllp" target="_blank" aria-label="Instagram" class="instagram-link"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
-                    <a href="https://www.linkedin.com/company/gireevanrealtyllp/" target="_blank" aria-label="LinkedIn" class="linkedin-link"><i class="fab fa-linkedin-in"></i><span class="sr-only">LinkedIn</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 20px 0;">
-
-            <div class="copyright text-center" style="font-size: 0.85rem; color: #777;">
-                <p>&copy; 2026 Gireevan Realty. All Rights Reserved. | <a href="#"
-                        style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
-                <p style="margin-top: 5px; font-size: 0.75rem;">Images courtesy of Unsplash & Pexels.</p>
-            </div>
-        </div>
-    </footer>
-    <a href="https://wa.me/919594743727" class="sticky-whatsapp" target="_blank" aria-label="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/gireevan-logo.jpeg" alt="Gireevan Realty Logo" />
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Gireevan Realty</span>
+        <span class="nav-logo-tagline">Where nature inspires</span>
+      </div>
     </a>
-    <div class="mobile-bottom-bar">
-        <a href="tel:+919594743727"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fas fa-phone-alt" style="font-size: 20px; color: var(--primary-color);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Call</span>
-        </a>
-        <a href="https://wa.me/919594743727"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fab fa-whatsapp" style="font-size: 20px; color: var(--success);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Chat</span>
-        </a>
-        <a href="contact.html"
-            style="display: flex; flex-direction: column; align-items: center; color: var(--text-color);">
-            <i class="fas fa-calendar-check" style="font-size: 20px; color: var(--secondary-color);"></i>
-            <span style="font-size: 12px; margin-top: 4px;">Book Visit</span>
-        </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="na-plots.html">NA Plots</a></li>
+      <li><a href="bungalows.html">Bungalows</a></li>
+      <li><a href="master-plan.html">Master Plan</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Site Visit</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="na-plots.html">NA Plots</a>
+  <a href="bungalows.html">Bungalows</a>
+  <a href="master-plan.html">Master Plan</a>
+  <a href="location.html">Location</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Book Site Visit</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">Visual Tour</div>
+    <h1>Gallery</h1>
+    <p>A glimpse into the Gireevan lifestyle — lush plots, elegant bungalows, and premium amenities.</p>
+    <div class="page-hero-divider"></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section section-dark">
+  <div class="container">
+    <!-- FILTERS -->
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="plots">Plots & Site</button>
+      <button class="filter-btn" data-filter="exterior">Exteriors</button>
+      <button class="filter-btn" data-filter="interior">Interiors</button>
+      <button class="filter-btn" data-filter="amenity">Amenities</button>
     </div>
 
-    <script src="js/main.js" defer></script>
-    <script>
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function () {
-                this.onerror = null;
-                this.src = 'images/mountains-daytime-optimized.jpg';
-            };
-        });
-    </script>
-</body>
+    <!-- GALLERY GRID -->
+    <div class="gallery-grid-full reveal">
+      <!-- PLOTS -->
+      <div class="gallery-item wide" data-category="plots">
+        <img src="images/NA-plot-optimized.jpg" alt="NA Plots Countryside View" />
+        <div class="gallery-overlay"><span class="gallery-caption">NA Plots — Countryside View</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="plots">
+        <img src="images/master-layout-plan.png" alt="Master Layout Plan" />
+        <div class="gallery-overlay"><span class="gallery-caption">Site Master Layout</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
 
+      <!-- BUNGALOW EXTERIOR -->
+      <div class="gallery-item" data-category="exterior">
+        <img src="images/premium-bunglows-optimized.jpg" alt="Premium Bungalow" />
+        <div class="gallery-overlay"><span class="gallery-caption">Premium Bungalow</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item wide" data-category="exterior">
+        <img src="images/gallery-ext-1.jpg" alt="Villa Exterior Garden" />
+        <div class="gallery-overlay"><span class="gallery-caption">Exterior — Lush Garden View</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="images/gallery-ext-2.jpg" alt="Modern Architecture" />
+        <div class="gallery-overlay"><span class="gallery-caption">Exterior — Modern Design</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="images/gallery-ext-3.jpg" alt="Scenic Surroundings" />
+        <div class="gallery-overlay"><span class="gallery-caption">Exterior — Scenic Surroundings</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+
+      <!-- BUNGALOW TYPES -->
+      <div class="gallery-item" data-category="exterior">
+        <img src="images/type1-optimized.jpg" alt="1 BHK Cottage" />
+        <div class="gallery-overlay"><span class="gallery-caption">1 BHK Cozy Cottage</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="images/type2-optimized.jpg" alt="2 BHK Villa" />
+        <div class="gallery-overlay"><span class="gallery-caption">2 BHK Family Villa</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="images/type3-optimized.jpg" alt="3 BHK Luxury Estate" />
+        <div class="gallery-overlay"><span class="gallery-caption">3 BHK Luxury Estate</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+
+      <!-- INTERIOR -->
+      <div class="gallery-item wide" data-category="interior">
+        <img src="images/gallery-int-1.jpg" alt="Bright Living Room" />
+        <div class="gallery-overlay"><span class="gallery-caption">Interior — Bright Living Space</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="interior">
+        <img src="images/gallery-int-2.jpg" alt="Modern Bedroom" />
+        <div class="gallery-overlay"><span class="gallery-caption">Interior — Serene Bedroom</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="interior">
+        <img src="images/gallery-int-3.jpg" alt="Cozy Corner" />
+        <div class="gallery-overlay"><span class="gallery-caption">Interior — Relaxing Corners</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+
+      <!-- AMENITIES -->
+      <div class="gallery-item" data-category="amenity">
+        <img src="images/children-ride-from-children-s-slide-sisters-play-together-garden.jpg" alt="Kids Playzone" />
+        <div class="gallery-overlay"><span class="gallery-caption">Amenity — Kids Playzone</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="amenity">
+        <img src="images/young-fitness-woman-running-park-morning-sport-lifestyle-concept.jpg" alt="Jogger Park" />
+        <div class="gallery-overlay"><span class="gallery-caption">Amenity — Jogger Park</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+      <div class="gallery-item" data-category="amenity">
+        <img src="images/beautiful-girl-runs-into-autumn-bali.jpg" alt="Morning Jogging" />
+        <div class="gallery-overlay"><span class="gallery-caption">Amenity — Morning Jogging Zone</span></div>
+        <div class="gallery-zoom">🔍</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" id="lightbox-close">✕</div>
+  <img src="" alt="Gallery Image" />
+</div>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Come See It <span>In Person</span></h2>
+      <p>Photos don't do justice to the Konkan air and green surroundings. Book a site visit and experience it firsthand.</p>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn btn-gold">📅 Book Site Visit</a>
+        <a href="https://wa.me/919594743727" target="_blank" rel="noopener" class="btn btn-outline">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="images/gireevan-logo.jpeg" alt="Gireevan Realty" />
+        <div><span class="footer-logo-name">Gireevan Realty</span><span class="footer-logo-tagline">Where nature inspires</span></div>
+      </a>
+      <p>Premium NA plots and sustainable bungalows in the heart of Konkan.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/gireevan" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://www.instagram.com/gireevanrealtyllp" target="_blank" rel="noopener" class="social-btn">in</a>
+        <a href="https://www.linkedin.com/company/gireevanrealtyllp/" target="_blank" rel="noopener" class="social-btn">Li</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="na-plots.html">NA Plots</a></li>
+        <li><a href="bungalows.html">Bungalows</a></li>
+        <li><a href="master-plan.html">Master Plan</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <ul>
+        <li><span class="fi">📍</span><span>Revoli, Pen, Raigad 402107</span></li>
+        <li><span class="fi">📞</span><a href="tel:+919594743727">+91 95947 43727</a></li>
+        <li><span class="fi">✉️</span><a href="mailto:info@gireevan.com">info@gireevan.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Gireevan Realty LLP. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919594743727" target="_blank" rel="noopener" class="wa-btn">💬</a>
+</div>
+
+<script src="scripts.js"></script>
+</body>
 </html>
