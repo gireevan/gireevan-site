@@ -1991,6 +1991,60 @@ body { overflow-x: hidden; }
   .offering-card { min-height: 320px; }
 }
 
+/* =====================================================
+   HAMBURGER FIX — raise navbar above everything on iOS
+   ===================================================== */
+.navbar { z-index: 9999; }
+.mobile-menu { z-index: 9998; }
+.hamburger { z-index: 10000; position: relative; }
+
+/* hero-content starts at y=0 and blocks taps — fix with pointer-events on mobile */
+@media (max-width: 768px) {
+  .hero-content { pointer-events: none; }
+  .hero-content .hero-eyebrow,
+  .hero-content .hero-title,
+  .hero-content .hero-subtitle,
+  .hero-content .hero-badge,
+  .hero-content .hero-actions,
+  .hero-content .hero-actions .btn,
+  .hero-content a { pointer-events: auto; }
+}
+
+/* =====================================================
+   MOBILE SINGLE-COLUMN LAYOUTS
+   ===================================================== */
+@media (max-width: 768px) {
+  /* Bungalow packages — full width stacked */
+  .typology-grid { grid-template-columns: 1fr !important; }
+
+  /* Inline-style grids on na-plots documents section */
+  section .container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Plan teaser — image first, then text */
+  .plan-teaser { display: flex; flex-direction: column; gap: 2rem; }
+  .plan-teaser .plan-image-wrap { order: 1; }
+  .plan-teaser .plan-content { order: 2; }
+
+  /* Location — map first, distances below */
+  .location-grid { display: flex; flex-direction: column; gap: 2rem; }
+
+  /* Contact — info first, form below */
+  .contact-layout { display: flex; flex-direction: column; gap: 2rem; }
+
+  /* NA explainer — text first, points below */
+  .na-explainer { display: flex; flex-direction: column; gap: 2rem; }
+
+  /* Highlights — single column */
+  .highlights-grid { grid-template-columns: 1fr !important; }
+
+  /* Offerings — single column, taller cards */
+  .offerings-grid { grid-template-columns: 1fr !important; }
+  .offering-card { min-height: 360px; }
+}
+
 /* Disable hover effects on touch devices (improves performance + avoids sticky hover) */
 @media (hover: none) {
   .card:hover, .highlight-card:hover, .amenity-item:hover,
