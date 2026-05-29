@@ -204,6 +204,9 @@ body {
   background: none;
   border: none;
   z-index: 1100;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .hamburger span {
   display: block;
@@ -224,6 +227,7 @@ body {
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(1, 8, 4, 0.98);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 999;
   flex-direction: column;
   align-items: center;
@@ -231,8 +235,12 @@ body {
   gap: 1.5rem;
   transform: translateX(100%);
   transition: transform 0.4s var(--ease);
+  pointer-events: none;
 }
-.mobile-menu.open { transform: translateX(0); }
+.mobile-menu.open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
 .mobile-menu a {
   color: var(--text-primary);
   text-decoration: none;
@@ -1875,4 +1883,128 @@ html.js-ready .reveal.visible {
   .stats-bar-inner { grid-template-columns: 1fr 1fr; }
   .inquiry-form { padding: 1.5rem; }
   .cta-band { padding: 2rem 1.5rem; }
+}
+
+/* =====================================================
+   iOS & MOBILE OPTIMISATIONS
+   ===================================================== */
+
+/* iOS Safari viewport height — address bar aware */
+.hero {
+  min-height: 100svh;
+}
+@supports not (min-height: 100svh) {
+  .hero { min-height: -webkit-fill-available; }
+}
+
+/* Prevent iOS auto-zoom on focused inputs (must be ≥16px) */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-size: 16px !important;
+}
+
+/* Smooth momentum scrolling on iOS */
+html { -webkit-overflow-scrolling: touch; }
+
+/* Prevent horizontal overflow site-wide */
+body { overflow-x: hidden; }
+.section, .page-hero { overflow-x: hidden; }
+
+/* Ensure -webkit-backdrop-filter is present everywhere backdrop-filter is used */
+.navbar.scrolled { -webkit-backdrop-filter: blur(20px); }
+.card { -webkit-backdrop-filter: blur(20px); }
+.mobile-menu { -webkit-backdrop-filter: blur(20px); }
+.inquiry-form { -webkit-backdrop-filter: blur(20px); }
+.config-card { -webkit-backdrop-filter: blur(20px); }
+.process-step { -webkit-backdrop-filter: blur(20px); }
+.highlight-card { -webkit-backdrop-filter: blur(20px); }
+.amenity-item { -webkit-backdrop-filter: blur(20px); }
+.na-point { -webkit-backdrop-filter: blur(20px); }
+.contact-info-card { -webkit-backdrop-filter: blur(20px); }
+.included-item { -webkit-backdrop-filter: blur(20px); }
+.typology-card { -webkit-backdrop-filter: blur(20px); }
+.wa-mini { -webkit-backdrop-filter: blur(10px); }
+
+/* Safe-area insets for notched iPhones */
+.navbar {
+  padding-left: max(2rem, env(safe-area-inset-left));
+  padding-right: max(2rem, env(safe-area-inset-right));
+}
+.footer {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+.whatsapp-float {
+  bottom: max(2rem, calc(env(safe-area-inset-bottom) + 1rem));
+  right: max(2rem, env(safe-area-inset-right));
+}
+.mobile-menu {
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Minimum touch target size (44×44px) */
+.btn { min-height: 44px; }
+.hamburger { min-width: 44px; min-height: 44px; justify-content: center; }
+.wa-btn { min-width: 56px; min-height: 56px; }
+.filter-btn { min-height: 40px; }
+.nav-cta { min-height: 44px; }
+
+/* GPU-accelerate the hero image animation */
+.hero-bg img { will-change: transform, filter; }
+
+/* Config grid — override any inline style on mobile */
+@media (max-width: 768px) {
+  .config-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .stat-item:nth-child(4) { border-right: none; }
+  .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
+  .page-hero { padding: 8rem 1.5rem 3.5rem; }
+  .hero-content { padding: 0 1.25rem; padding-top: 5rem; }
+  .hero-badge { flex-wrap: wrap; gap: 0.5rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .offering-content h3 { font-size: 1.5rem; }
+  .section-title { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+  .cta-band { padding: 2.5rem 1.5rem; }
+  .plan-legend { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .config-grid { grid-template-columns: 1fr !important; }
+  .stats-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .stat-number { font-size: 1.6rem; }
+  .stat-item { border-right: none !important; border-bottom: 1px solid var(--border); padding: 0.75rem 0.5rem; }
+  .stat-item:last-child { border-bottom: none; }
+  .hero-title { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .mobile-menu a { font-size: 1.6rem; }
+  .typology-grid { grid-template-columns: 1fr; }
+  .na-explainer { gap: 2rem; }
+  .section { padding: 3rem 1rem; }
+  .page-hero { padding: 7rem 1rem 3rem; }
+  .inquiry-form { padding: 1.25rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .location-map-wrap { height: 280px; }
+  .cta-band { padding: 1.75rem 1.25rem; }
+  .cta-band-actions { flex-direction: column; align-items: center; }
+  .cta-band-actions .btn { width: 100%; justify-content: center; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .offering-card { min-height: 320px; }
+}
+
+/* Disable hover effects on touch devices (improves performance + avoids sticky hover) */
+@media (hover: none) {
+  .card:hover, .highlight-card:hover, .amenity-item:hover,
+  .process-step:hover, .config-card:hover, .typology-card:hover,
+  .offering-card:hover, .distance-item:hover, .doc-item:hover,
+  .na-point:hover, .included-item:hover, .contact-info-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .card:hover .card-img img,
+  .typology-card:hover .typology-img img,
+  .offering-card:hover img,
+  .gallery-item:hover img { transform: none; }
+  .gallery-item:hover .gallery-overlay,
+  .gallery-item:hover .gallery-zoom { opacity: 0; }
+  .btn-primary:hover, .btn-gold:hover, .btn-outline:hover { transform: none; }
 }
