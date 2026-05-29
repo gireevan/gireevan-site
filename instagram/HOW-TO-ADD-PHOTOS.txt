@@ -1,0 +1,63 @@
+======================================================
+  GIREEVAN REALTY — How to Add Instagram Photos
+======================================================
+
+STEP 1 — Copy your photo into this folder
+------------------------------------------
+Put any .jpg, .jpeg, or .png photo here.
+Example: photo1.jpg, site-visit-march.jpg, aerial-view.jpg
+
+STEP 2 — Open index.html in a text editor
+------------------------------------------
+Search for: "ORIGINAL SET — add your photos here"
+
+STEP 3 — Add one line for your photo
+--------------------------------------
+Copy this block and paste it AFTER the last photo:
+
+  <div class="marquee-photo">
+    <img src="instagram/YOUR-PHOTO-NAME.jpg" alt="Description" loading="lazy" />
+    <div class="marquee-photo-overlay">
+      <span class="marquee-photo-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+        </svg>
+        @gireevanrealtyllp
+      </span>
+    </div>
+  </div>
+
+STEP 4 — Also paste it in the CLONE SET section
+------------------------------------------------
+Search for: "CLONE SET (exact copy — needed for seamless loop)"
+Paste the same block there too. This keeps the loop seamless.
+
+STEP 5 — Save & upload to GitHub
+----------------------------------
+That's it! The scroll animation happens automatically.
+
+======================================================
+  TIPS
+======================================================
+- Square photos (1:1 ratio) look best — like Instagram
+- Portrait or landscape also works fine
+- Keep file size under 300KB for fast loading
+  (Use squoosh.app to compress if needed)
+- Name files simply: no spaces, use hyphens
+  GOOD: site-visit-jan.jpg
+  BAD:  Site Visit January 2024 (1).jpg
+
+======================================================
+  PHOTO IDEAS for the strip
+======================================================
+- Aerial / drone shots of the site
+- Plot visit photos with customers
+- Bungalow progress shots
+- Konkan nature and scenic views
+- Team photos at the site
+- Festive / seasonal decoration photos
+- Amenity construction progress
+- Sunrise / sunset at Revoli
+
+======================================================

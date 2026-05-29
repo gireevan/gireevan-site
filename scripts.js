@@ -110,6 +110,9 @@
   const revealEls = document.querySelectorAll('.reveal');
   if (!revealEls.length) return;
 
+  // Mark JS as active — CSS will now hide .reveal elements until .visible is added
+  document.documentElement.classList.add('js-ready');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -117,13 +120,20 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05 });
 
-  revealEls.forEach(el => observer.observe(el));
+  revealEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 50) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 })();
 
 // ===== COUNTER ANIMATION =====
-function animateCounter(el, target, duration = 1800) {
+function animateCounter(el, target, duration = 1800, prefix = '') {
   let start = 0;
   const step = target / (duration / 16);
   const isDecimal = target % 1 !== 0;
@@ -131,10 +141,10 @@ function animateCounter(el, target, duration = 1800) {
   function update() {
     start += step;
     if (start >= target) {
-      el.textContent = isDecimal ? target.toFixed(1) : target.toLocaleString();
+      el.textContent = prefix + (isDecimal ? target.toFixed(1) : target.toLocaleString());
       return;
     }
-    el.textContent = isDecimal ? start.toFixed(1) : Math.floor(start).toLocaleString();
+    el.textContent = prefix + (isDecimal ? start.toFixed(1) : Math.floor(start).toLocaleString());
     requestAnimationFrame(update);
   }
   update();
@@ -144,19 +154,32 @@ function animateCounter(el, target, duration = 1800) {
   const counters = document.querySelectorAll('.stat-number[data-count]');
   if (!counters.length) return;
 
+  function triggerCounter(el) {
+    if (el.dataset.triggered) return;
+    el.dataset.triggered = '1';
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    animateCounter(el, target, 1800, prefix);
+    if (suffix) el.insertAdjacentHTML('afterend', `<span style="color:var(--gold);font-size:1.2rem;font-weight:900;">${suffix}</span>`);
+  }
+
+  function triggerAll() {
+    counters.forEach(c => triggerCounter(c));
+  }
+
+  // Fire after hero animation completes (~2.8s), regardless of scroll
+  setTimeout(triggerAll, 2800);
+
+  // Also fire on scroll for users who skip past the hero
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseFloat(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        const prefix = el.dataset.prefix || '';
-        animateCounter(el, target);
-        if (suffix) el.insertAdjacentHTML('afterend', `<span style="color:var(--gold);font-size:1.2rem;font-weight:900;">${suffix}</span>`);
-        observer.unobserve(el);
+        triggerCounter(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
 
   counters.forEach(c => observer.observe(c));
 })();
