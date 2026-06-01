@@ -2062,3 +2062,68 @@ body { overflow-x: hidden; }
   .gallery-item:hover .gallery-zoom { opacity: 0; }
   .btn-primary:hover, .btn-gold:hover, .btn-outline:hover { transform: none; }
 }
+
+/* =====================================================
+   MOBILE BOTTOM NAV — replaces hamburger on mobile
+   ===================================================== */
+.bottom-nav { display: none; }
+
+@media (max-width: 768px) {
+  /* Hide hamburger — bottom nav takes over */
+  .hamburger { display: none !important; }
+  .mobile-menu { display: none !important; pointer-events: none !important; }
+
+  /* Bottom nav bar */
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(1, 8, 4, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid var(--border);
+    z-index: 9997;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .bnav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.25rem 0.5rem;
+    text-decoration: none;
+    color: rgba(240,255,244,0.45);
+    font-size: 0.58rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    gap: 0.3rem;
+    transition: color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .bnav-item svg {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    transition: stroke 0.2s;
+  }
+
+  .bnav-item.active {
+    color: var(--emerald);
+  }
+  .bnav-item.active svg {
+    filter: drop-shadow(0 0 6px rgba(34,197,94,0.5));
+  }
+
+  /* Push page content above the bottom nav */
+  body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
+
+  /* Move WhatsApp float above the bottom nav */
+  .whatsapp-float {
+    bottom: calc(70px + env(safe-area-inset-bottom));
+  }
+}
