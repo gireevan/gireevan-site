@@ -334,7 +334,7 @@ body {
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-size: clamp(1.6rem, 4.5vw, 3.2rem);
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -1879,7 +1879,7 @@ html.js-ready .reveal.visible {
   .amenities-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item:first-child { grid-column: span 1; }
-  .hero-title { font-size: 2.2rem; }
+  .hero-title { font-size: 1.4rem; }
   .stats-bar-inner { grid-template-columns: 1fr 1fr; }
   .inquiry-form { padding: 1.5rem; }
   .cta-band { padding: 2rem 1.5rem; }
@@ -1975,7 +1975,7 @@ body { overflow-x: hidden; }
   .stat-number { font-size: 1.6rem; }
   .stat-item { border-right: none !important; border-bottom: 1px solid var(--border); padding: 0.75rem 0.5rem; }
   .stat-item:last-child { border-bottom: none; }
-  .hero-title { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .hero-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
   .mobile-menu a { font-size: 1.6rem; }
   .typology-grid { grid-template-columns: 1fr; }
   .na-explainer { gap: 2rem; }
@@ -2126,4 +2126,20 @@ body { overflow-x: hidden; }
   .whatsapp-float {
     bottom: calc(70px + env(safe-area-inset-bottom));
   }
+}
+
+/* ===== NATURE NEST BRAND HEADLINE ===== */
+.nature-nest-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin: 0.4rem 0 0.6rem;
+  background: linear-gradient(135deg, #ffffff 0%, #22C55E 50%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 32px rgba(34,197,94,0.35));
 }
