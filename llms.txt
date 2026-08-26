@@ -1,0 +1,24 @@
+# Gireevan Realty
+
+> Gireevan Realty markets Nature Nest, a real-estate project in Revoli-Pen, Raigad, Maharashtra, offering NA-approved residential plots and custom bungalow packages with site-visit booking and contact details.
+
+Use the links below as the primary source for project information on this website.
+
+Important notes:
+- Pricing, availability, and package details can change. Use the contact page for the latest enquiry path.
+- "NA plot" on this site refers to non-agricultural land approved for residential use, as explained on the plots page.
+- The links below point to the canonical HTML pages currently published on the site.
+
+## Main Pages
+
+- [Home](https://gireevan.com/): Project overview for Nature Nest, including positioning, highlights, plot pricing from INR 1,399 per sq ft onwards, and bungalow package entry points.
+- [NA Plots](https://gireevan.com/na-plots.html): Details on NA-approved plots, plot-size configurations, legal context, documents, and the booking journey.
+- [Luxury Bungalows](https://gireevan.com/bungalows.html): Bungalow concepts, design philosophy, typologies, and villa-plus-plot package context.
+- [Location](https://gireevan.com/location.html): Revoli-Pen, Raigad location details, connectivity, travel times, and address information.
+- [Master Plan](https://gireevan.com/master-plan.html): Site layout with plot numbering, roads, open areas, and amenity zones.
+- [Gallery](https://gireevan.com/gallery.html): Visual reference for plots, bungalows, amenities, and the surrounding landscape.
+- [Contact](https://gireevan.com/contact.html): Site visit booking, phone, email, address, visit hours, and enquiry form.
+
+## Optional
+
+- [Sitemap](https://gireevan.com/sitemap.xml): Machine-readable list of the main public pages on the site.
